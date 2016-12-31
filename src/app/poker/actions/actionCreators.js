@@ -1,10 +1,7 @@
-import cardDeckApi from "./api/cardDeckApi";
+import cardDeck from "./api/cardDeckApi";
 
 // A generated deck id to use
 const DECK_ID = "wtiwta6hedbc";
-
-// Card deck object with API calls
-const cardDeck = new cardDeckApi();
 
 /**
  * initDeck()

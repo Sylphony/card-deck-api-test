@@ -1,11 +1,14 @@
 import axios from "axios";
 
-class CardDeckApi {
+/**
+ * Class to make requests to the API.
+ */
+const cardDeckApi = {
     /**
      * Initialize (and shuffle) a deck.
      * @param deckId: The deck's id.
      */
-    initDeck(deckId) {
+    initDeck: function(deckId) {
         return axios({
             method: "GET",
             url: `https://deckofcardsapi.com/api/deck/${deckId}/shuffle/`,
@@ -13,14 +16,14 @@ class CardDeckApi {
                 "deck_count": 1
             }
         });
-    }
+    },
 
     /**
      * Deal cards from the deck.
      * @param deckId: The deck's id.
      * @param numCards: Number of cards to deal.
      */
-    dealCard(deckId, numCards = 1) {
+    dealCard: function(deckId, numCards = 1) {
         return axios({
             method: "GET",
             url: `https://deckofcardsapi.com/api/deck/${deckId}/draw/`,
@@ -29,6 +32,6 @@ class CardDeckApi {
             }
         });
     }
-}
+};
 
-export default CardDeckApi;
+export default cardDeckApi;

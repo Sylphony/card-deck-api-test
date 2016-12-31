@@ -18,9 +18,7 @@ class PokerFieldContainer extends React.Component {
  * Map state items to props.
  */
 function mapStateToProps(state) {
-    return {
-        pokerField: state.pokerField
-    };
+    return state;
 }
 
 /**

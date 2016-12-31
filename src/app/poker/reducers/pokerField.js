@@ -6,7 +6,10 @@ const INITIAL_STATE = {
 };
 
 /**
+ * pokerField()
  * Poker field reducer.
+ * @param state: The Redux state.
+ * @param action: The action that is dispatched.
  */
 function pokerField(state = INITIAL_STATE, action) {
     switch(action.type) {
@@ -20,6 +23,7 @@ function pokerField(state = INITIAL_STATE, action) {
             return state;
     }
 }
+
 
 export default {
     pokerField

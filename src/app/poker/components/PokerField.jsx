@@ -7,10 +7,28 @@ class PokerField extends React.Component {
     }
 
     render() {
+        if (this.props.pokerPlayer.players.length > 0) {
+            let imgEles = [];
+
+            let hand = this.props.pokerPlayer.players[0].hand;
+
+            for (let i = 0; i < hand.length; i++) {
+                imgEles.push(<img src={ hand[i].image } key={ hand[i].code } />);
+            }
+
+            return (
+                <div className="poker-field">
+                    <button type="button" onClick={ this.props.dealCard.bind(null, this.props.pokerField.deck.deck_id) }>Deal Card</button>
+                    <button type="button" onClick={ this.props.addPlayer }>Add player</button>
+                    { imgEles }
+                </div>
+            );
+        }
+
         return (
-            <div className="poker-field">
-                <button type="button" onClick={ this.props.initDeck }>Push</button>
-                { this.props.pokerField.deck.deck_id }
+            <div>
+                <button type="button" onClick={ this.props.dealCard.bind(null, this.props.pokerField.deck.deck_id) }>Deal Card</button>
+                <button type="button" onClick={ this.props.addPlayer }>Add player</button>
             </div>
         );
     }

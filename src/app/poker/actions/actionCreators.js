@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Initialize a deck object
+// Initialize a deck
 export function initDeck() {
     return (dispatch) => {
         return axios({
@@ -11,6 +11,7 @@ export function initDeck() {
             }
         })
         .then((resp) => {
+            // Once a response is received, dispatch action to reducers
             dispatch({
                 type: "INIT_DECK",
                 payload: resp.data

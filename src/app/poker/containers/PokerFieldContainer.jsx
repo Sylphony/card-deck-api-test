@@ -2,12 +2,14 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "./../actions/actionCreators";
-import PokerPlayer from "./../components/PokerPlayer.jsx";
+import PokerField from "./../components/PokerField.jsx";
 
-class PokerPlayerContainer extends React.Component {
+class PokerFieldContainer extends React.Component {
     render() {
         return (
-            <PokerPlayer {...this.props } />
+            <div>
+                <PokerField {...this.props } />
+            </div>
         );
     }
 }
@@ -29,4 +31,4 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(actionCreators, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PokerPlayerContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PokerFieldContainer);

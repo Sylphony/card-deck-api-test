@@ -1,16 +1,14 @@
 import React from "react";
 
-class PokerPlayer extends React.Component {
+class PokerField extends React.Component {
     componentDidMount() {
         // Initailize a deck
         this.props.initDeck();
     }
 
     render() {
-        console.log("inside PokerPlayer\n", this.props);
-
         return (
-            <div className="poker-player">
+            <div className="poker-field">
                 <button type="button" onClick={ this.props.initDeck }>Push</button>
                 { this.props.pokerField.deck.deck_id }
             </div>
@@ -18,4 +16,4 @@ class PokerPlayer extends React.Component {
     }
 }
 
-export default PokerPlayer;
+export default PokerField;

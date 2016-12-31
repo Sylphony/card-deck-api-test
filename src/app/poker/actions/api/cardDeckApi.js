@@ -1,7 +1,7 @@
 import axios from "axios";
 
 /**
- * Class to make requests to the API.
+ * Make requests to the API.
  */
 const cardDeckApi = {
     /**

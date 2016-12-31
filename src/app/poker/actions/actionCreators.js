@@ -1,7 +1,21 @@
-// Create a new deck object
-export function createDeck() {
-    return {
-        type: "CREATE_DECK"
+import axios from "axios";
+
+// Initialize a deck object
+export function initDeck() {
+    return (dispatch) => {
+        return axios({
+            method: "GET",
+            url: "https://deckofcardsapi.com/api/deck/new/shuffle/",
+            params: {
+                "deck_count": 1
+            }
+        })
+        .then((resp) => {
+            dispatch({
+                type: "INIT_DECK",
+                payload: resp.data
+            });
+        });
     };
 }
 

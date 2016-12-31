@@ -7,16 +7,18 @@ import PokerPlayer from "./../components/PokerPlayer.jsx";
 class PokerPlayerContainer extends React.Component {
     render() {
         return (
-            <PokerPlayer />
+            <PokerPlayer {...this.props } />
         );
     }
 }
 
 /**
- * Map state reducers to props.
+ * Map state items to props.
  */
 function mapStateToProps(state) {
-    return {};
+    return {
+        pokerField: state.pokerField
+    };
 }
 
 /**

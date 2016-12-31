@@ -1,16 +1,16 @@
 const INITIAL_STATE = {
-    hand: {
-        cards: [],
-        numCards: 0
+    deck: {
+        "deck_id": null,
+        remaining: null
     }
 };
 
 /**
- * Poker player reducer.
+ * Poker field reducer.
  */
-function pokerPlayer(state = INITIAL_STATE, action) {
+function pokerField(state = INITIAL_STATE, action) {
     switch(action.type) {
-        case "INIT_PLAYER":
+        case "INIT_DECK":
             return {
                 ...state,
                 deck: action.payload
@@ -22,5 +22,5 @@ function pokerPlayer(state = INITIAL_STATE, action) {
 }
 
 export default {
-    pokerPlayer
+    pokerField
 }
